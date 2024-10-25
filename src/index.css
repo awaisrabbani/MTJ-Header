@@ -2,3 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+@layer utilities {
+    @keyframes blinking {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  
+    .blink {
+      animation: blinking 1s ease infinite;
+    }
+  }
+
+.container {
+    @apply mx-auto px-2 py-5
+}
+.hover-effect {
+    @apply inline-block hover:text-black cursor-pointer after:block after:content-[""] after:border-b-2 after:border-b-black after:scale-x-0 after:transition after:ease-in-out after:duration-300 after:origin-[100%_50%] hover:after:origin-[0%_50%] hover:after:scale-x-100;
+}
+.hover-effect1 {
+    @apply inline-block cursor-pointer after:block after:content-[""] after:border-b-2 after:border-b-black after:scale-x-0 after:transition after:ease-in-out after:duration-300 after:origin-[100%_50%] hover:after:origin-[0%_50%] hover:after:scale-x-100;
+}
+.hover-effect2 {
+    @apply border-b-[1px] border-[#ebebeb] hover:bg-[#ebebeb]
+}
